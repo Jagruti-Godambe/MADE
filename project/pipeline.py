@@ -31,8 +31,8 @@ def extract_data(data_path_co2, data_path_crop):
 
 
 if __name__ == '__main__':
-    data_path_co2 = 'data/co2_emissions_kt_by_country.csv'
-    data_path_crop  = 'data/crop_production.csv'
-    result_dataset = 'data/result.csv'
+    data_path_co2 = '../data/co2_emissions_kt_by_country.csv'
+    data_path_crop  = '../data/crop_production.csv'
+    result_dataset = '../data/result.csv'
     result = extract_data(data_path_co2, data_path_crop)
     result.to_csv(result_dataset, index=False)
