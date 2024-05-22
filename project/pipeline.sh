@@ -1,1 +1,1 @@
-python3 project/extract.py 
+python3 project/pipeline.py 
