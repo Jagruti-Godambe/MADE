@@ -8,7 +8,7 @@ def extract_data(data_path_co2, data_path_crop):
     crop_data.columns = ['Index', 'Location', 'Indicator','Subject', 'Measure',
                      'Frequency', 'Year', 'Crop_Production_Value','Flag_codes']
     
-    #Filter out the data for year 2000 to 2015
+    #Filter out the data for year 1990 to 2015
 
     crop_data_us = crop_data[(crop_data['Location'] == 'USA') & (crop_data['Year'].between(1990, 2015))]
     co2_data_us = co2_data[(co2_data['Country_Name'] == 'United States') & (co2_data['Year'].between(1990, 2015))]
