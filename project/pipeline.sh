@@ -1,1 +1,1 @@
-python3 extract.py
+python3 project/extract.py 
