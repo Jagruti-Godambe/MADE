@@ -37,7 +37,7 @@ The CO2 emissions dataset provides a comprehensive overview of the amount of CO2
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Understanding the Issue  https://github.com/jvalue/made-template/issues/107
+1. Understanding the Issue #1
 2. Load the data from csv files https://github.com/jvalue/made-template/issues/105
 3. Data Cleaning https://github.com/jvalue/made-template/issues/108
 4. Creating data pipeline for relevant insights https://github.com/jvalue/made-template/issues/109
