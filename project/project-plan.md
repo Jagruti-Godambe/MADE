@@ -2,18 +2,18 @@
 
 ## Title
 <!-- Give your project a short title. -->
-Climate impact on Crop production and Co2 emission
+Climate change impact on Crop production and Co2 emission in USA from year 1990 to 2015.
 
 ## Main Question
 
 <!-- Think about one main question you want to answer based on the data. -->
-1. "How have climate variations influenced CO2 emissions and crop production trends at the national level in the United States between 1990 and 2015?"
+1. "How have climate variations influenced CO2 emissions and crop production trends at the national level in the United States between year 1990 and 2015?"
 
 ## Description
 
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
 Climate change is a major problem because it affects our environment, weather patterns, ecosystems, and human society, leading to severe consequences such as rising temperatures, extreme weather events, and sea-level rise, Co2 Emission.
-This projects analyzes history data from 1990 and 2015, filter out the data for USA region. The results can give insights into how climate change impacted crop production and co2 emission. The result will give average crop production and Co2 emission value.
+This projects analyzes history data from 1990 and 2015, filter out the data for USA region. The results can give insights into how climate change impacted crop production and co2 emission. The result will give average crop production and Co2 emission value from 1990 to 2015.
 
 ## Datasources
 
