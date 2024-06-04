@@ -2,9 +2,8 @@ pipeline Goods {
 
     GoodsExtractor -> GoodsTextFileInterpreter
                     -> GoodsCSVInterpreter
-                    -> GoodsRowDeleter
+                    -> GoodsTransportDataSelector
                     -> GoodsColumnDeleter
-                    -> HeaderSequenceWriter
                     -> GoodsTableInterpreter
                     -> GoodsLoader;
 
@@ -12,36 +11,33 @@ pipeline Goods {
         url: "https://www-genesis.destatis.de/genesis/downloads/00/tables/46131-0014_00.csv";
     }
 
-    block GoodsTextFileInterpreter oftype TextFileInterpreter { }
+    block GoodsTextFileInterpreter oftype TextFileInterpreter { 
+        encoding : "latin2" ;
+    }
 
     block GoodsCSVInterpreter oftype CSVInterpreter {
         delimiter: ';';
    
     }
-
-    block GoodsRowDeleter oftype RowDeleter {
-        delete: [row 1, row 2, row 3, row 4, row 5, row 6, row 7, row 8];
+    block GoodsTransportDataSelector oftype CellRangeSelector {
+       select: range A9:AU*; 
     }
 
     block GoodsColumnDeleter oftype ColumnDeleter {
        delete: [column F,column G,column H,column I,column J,column K,column L,column M,column N,column O,column P,column Q,column R,column S,column T,column U,column V,column W,column X,column Y,column Z,column AA,column AC,column AD,column AE,column AF,column AG,column AH,column AI,column AJ,column AK,column AL,column AM,column AN,column AO,column AP,column AQ,column AR,column AS];
     }
     
-    block HeaderSequenceWriter oftype CellWriter {
-        at: range A1:G1;
-        write: ['year', 'month', 'goods_id', 'goods_name', 'goods_source','abroad', 'total'];
-    } 
     
     block GoodsTableInterpreter oftype TableInterpreter {
-        header: true;
+        header: false;
         columns: [
-            "year" oftype integer,
-            "month" oftype text,
-            "goods_id" oftype text,
+            "year" oftype positive_integers,
+            "month" oftype german_months ,
+            "goods_id" oftype goods_id ,
             "goods_name" oftype text,
             "goods_source" oftype text,
-            "abroad" oftype integer,
-            "total" oftype integer,
+            "abroad" oftype positive_integers,
+            "total" oftype positive_integers,
 
          
 
@@ -52,4 +48,29 @@ pipeline Goods {
         table: "Goods";
         file: "goodsTransportedByTrain.sqlite";
     }
+
 }
+     
+    valuetype positive_integers oftype integer {
+        constraints: [ NumberGreaterThanZero ] ;
+    }
+    constraint NumberGreaterThanZero on integer :
+        value > 0 ;
+
+    
+    valuetype german_months oftype text {
+        constraints: [ german_months_constraint ];
+    }
+
+    constraint german_months_constraint oftype AllowlistConstraint {
+        allowlist: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+    }
+
+
+    valuetype goods_id oftype text {
+        constraints: [ goods_id_constraint ];
+    }
+    //Constraint to ensure goods IDs follow a specific pattern
+    constraint goods_id_constraint oftype RegexConstraint {
+        regex: /^NST7-[A-Z0-9]{3}/;
+    }
