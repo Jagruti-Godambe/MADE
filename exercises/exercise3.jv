@@ -4,6 +4,7 @@ pipeline Goods {
                     -> GoodsCSVInterpreter
                     -> GoodsTransportDataSelector
                     -> GoodsColumnDeleter
+                    -> HeaderSequenceWriter
                     -> GoodsTableInterpreter
                     -> GoodsLoader;
 
@@ -27,9 +28,13 @@ pipeline Goods {
        delete: [column F,column G,column H,column I,column J,column K,column L,column M,column N,column O,column P,column Q,column R,column S,column T,column U,column V,column W,column X,column Y,column Z,column AA,column AC,column AD,column AE,column AF,column AG,column AH,column AI,column AJ,column AK,column AL,column AM,column AN,column AO,column AP,column AQ,column AR,column AS];
     }
     
+    block HeaderSequenceWriter oftype CellWriter {
+        at: range A1:G1;
+        write: ['year', 'month', 'goods_id', 'goods_name', 'goods_source','abroad', 'total'];
+    } 
     
     block GoodsTableInterpreter oftype TableInterpreter {
-        header: false;
+        header: true;
         columns: [
             "year" oftype positive_integers,
             "month" oftype german_months ,
