@@ -1,61 +1,56 @@
-pipeline Goods {
+//creating a automated datapipeline
+pipeline  Goods{
 
-    GoodsExtractor -> GoodsTextFileInterpreter
-                    -> GoodsCSVInterpreter
-                    -> GoodsTransportDataSelector
-                    -> GoodsColumnDeleter
-                    -> HeaderSequenceWriter
-                    -> GoodsTableInterpreter
-                    -> GoodsLoader;
-
+    GoodsExtractor 
+        -> GoodsTextFileInterpreter
+        -> GoodsCSVInterpreter 
+        -> GoodsDataSelector
+        -> GoodsColumnDeleter
+	   	-> GoodsTableInterpreter
+		-> GoodsLoader;
+ 
     block GoodsExtractor oftype HttpExtractor {
-        url: "https://www-genesis.destatis.de/genesis/downloads/00/tables/46131-0014_00.csv";
-    }
+		url: "https://www-genesis.destatis.de/genesis/downloads/00/tables/46131-0014_00.csv";
+	}
 
     block GoodsTextFileInterpreter oftype TextFileInterpreter { 
-        encoding : "latin2" ;
+        encoding : "latin2" ; 
     }
-
-    block GoodsCSVInterpreter oftype CSVInterpreter {
-        delimiter: ';';
    
-    }
-    block GoodsTransportDataSelector oftype CellRangeSelector {
+    block GoodsCSVInterpreter oftype CSVInterpreter {
+		delimiter : ";" ;
+	}
+
+    block GoodsDataSelector oftype CellRangeSelector {
        select: range A9:AU*; 
     }
 
     block GoodsColumnDeleter oftype ColumnDeleter {
-       delete: [column F,column G,column H,column I,column J,column K,column L,column M,column N,column O,column P,column Q,column R,column S,column T,column U,column V,column W,column X,column Y,column Z,column AA,column AC,column AD,column AE,column AF,column AG,column AH,column AI,column AJ,column AK,column AL,column AM,column AN,column AO,column AP,column AQ,column AR,column AS];
-    }
-    
-    block HeaderSequenceWriter oftype CellWriter {
-        at: range A1:G1;
-        write: ['year', 'month', 'goods_id', 'goods_name', 'goods_source','abroad', 'total'];
-    } 
-    
+        delete: [column F, column G, column H, column I, column J, column K, column L, column M, column N, column O, column P, column Q,
+                column R, column S, column T, column U, column V, column W, column X, column Y, column Z, column AA, column AB, column AC,
+                column AD, column AE, column AF, column AG, column AH, column AI, column AJ, column AK, column AL, column AM, column AN,
+                column AO, column AP, column AQ, column AR, column AS];
+   }
+
     block GoodsTableInterpreter oftype TableInterpreter {
-        header: true;
-        columns: [
-            "year" oftype positive_integers,
-            "month" oftype german_months ,
-            "goods_id" oftype goods_id ,
-            "goods_name" oftype text,
-            "goods_source" oftype text,
-            "abroad" oftype positive_integers,
-            "total" oftype positive_integers,
-
-         
-
-        ];
-    }
+		header: false;
+		columns: [
+				    "year" oftype positive_integers,
+                    "month" oftype german_months,
+                    "goods_id" oftype goods_id,
+                    "goods_name" oftype text,
+                    "goods_source" oftype text,
+                    "abroad" oftype positive_integers,
+                    "total" oftype positive_integers
+		        ];
+	}
 
     block GoodsLoader oftype SQLiteLoader {
-        table: "Goods";
-        file: "goodsTransportedByTrain.sqlite";
-    }
-
+		table: "goods";
+		file: "./goodsTransportedByTrain.sqlite";
+	}
 }
-     
+   
     valuetype positive_integers oftype integer {
         constraints: [ NumberGreaterThanZero ] ;
     }
