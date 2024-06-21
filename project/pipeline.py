@@ -78,7 +78,6 @@ def extract_data(dataset_identifier_co2, dataset_identifier_crop):
     save_to_sqlite(merged_data, directory='data/')
     return merged_data
 
-
 # Dataset identifiers
 dataset_identifier_co2 = 'ulrikthygepedersen/co2-emissions-by-country'
 dataset_identifier_crop = 'thedevastator/the-relationship-between-crop-production-and-cli'
