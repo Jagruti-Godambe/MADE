@@ -18,7 +18,6 @@ class TestPipeline(unittest.TestCase):
                 os.remove(os.path.join('data/', file))
         else:
             os.makedirs('data/')
-
     def test_data_pipeline(self):
         # Run the data pipeline
         merged_data = extract_data(self.dataset_identifier_co2, self.dataset_identifier_crop)
