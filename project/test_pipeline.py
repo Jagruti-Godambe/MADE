@@ -38,6 +38,7 @@ class TestPipeline(unittest.TestCase):
         conn.close()
         self.assertGreater(result.iloc[0, 0], 0, "The database table should have at least one row")
 
+
     def tearDown(self):
         if os.path.exists(self.test_db_path):
             os.remove(self.test_db_path)
