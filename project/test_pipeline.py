@@ -41,6 +41,6 @@ class TestPipeline(unittest.TestCase):
     def tearDown(self):
         if os.path.exists(self.test_db_path):
             os.remove(self.test_db_path)
-
+            
 if __name__ == '__main__':
     unittest.main()
