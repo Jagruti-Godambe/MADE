@@ -34,7 +34,7 @@ pipeline GTFS_Stops_Pipeline {
             "stop_name" oftype text, 
             "stop_lat" oftype lat_long,
             "stop_lon" oftype lat_long,
-            "zone_id" oftype zone_id_equal
+            "zone_id" oftype zone
         ];
     }
 
@@ -50,7 +50,7 @@ pipeline GTFS_Stops_Pipeline {
     constraint limit on decimal:
         value >= -90 and value <= 90;
 
-    valuetype zone_id_equal oftype integer {
+    valuetype zone oftype integer {
         constraints: [zone];
     }
 
