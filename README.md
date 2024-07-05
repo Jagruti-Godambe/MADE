@@ -72,6 +72,8 @@ This dataset, also from Kaggle, offers a comprehensive overview of CO2 emissions
 ## Analysis
 The analysis focused on examining the trends in crop production and CO2 emissions over the 25-year period. Methods included statistical analysis and visualization to interpret the data patterns.
 
+<img src="data\data/Screenshot 2024-07-03 at 20.48.09.png" width="700" height="466">
+
 
 ## RESULTS:
 Showed variability over the period, influenced by factors such as industrial activities and changes in energy consumption.CO2 emissions showed a VARIABILITY.
