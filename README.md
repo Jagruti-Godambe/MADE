@@ -78,7 +78,7 @@ The analysis focused on examining the trends in crop production and CO2 emission
 <img src="data/Screenshot 2024-07-03 at 20.48.09.png" width="700" height="466">
 
 
-## RESULTS:
+## Results:
 Showed variability over the period, influenced by factors such as industrial activities and changes in energy consumption.CO2 emissions showed a VARIABILITY.
 Demonstrated a consistent increase despite variability, driven by advancements in agricultural technology and practices, as well as natural climate variability.
 
