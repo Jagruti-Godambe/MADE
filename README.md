@@ -52,7 +52,7 @@ Grading Exercise 1
 
 # PROJECT OVERVIEW
 
-## Analyzing the Impact of Climate Change on Crop Production and CO2 Emissions in the USA (1990-2015)##
+## Analyzing the Impact of Climate Change on Crop Production and CO2 Emissions in the USA (1990-2015)
 
 This Project aims to analyze and find the co relation between Crop production and Co2 emission in USA region from year 1990 to 2015.
 
@@ -60,6 +60,8 @@ This Project aims to analyze and find the co relation between Crop production an
 
 ## ANALYSIS
 The analysis focused on examining the trends in crop production and CO2 emissions over the 25-year period. Methods included statistical analysis and visualization to interpret the data patterns.
+
+
 
 
 ## RESULTS:
