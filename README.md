@@ -56,7 +56,18 @@ Grading Exercise 1
 
 This Project aims to analyze and find the co relation between Crop production and Co2 emission in USA region from year 1990 to 2015.
 
+## TECHNOLOGIES USED 
+1. `Data Analysis: Python (Pandas)`
+2. `Visualization: Matplotlib`
+3. `Version Control: Git, GitHub`
 
+## DATASETS
+
+# Crop Production & Climate Change
+This dataset, sourced from Kaggle, provides information on crop yields, harvested areas, and production quantities for key crops such as wheat, maize, rice, and soybeans. Crop yields are measured in tonnes per hectare, with data available from 2010-2016.
+
+# CO2 Emissions
+This dataset, also from Kaggle, offers a comprehensive overview of CO2 emissions by country from 1960 to 2023. It includes annual CO2 emission data for all countries worldwide.
 
 ## ANALYSIS
 The analysis focused on examining the trends in crop production and CO2 emissions over the 25-year period. Methods included statistical analysis and visualization to interpret the data patterns.
