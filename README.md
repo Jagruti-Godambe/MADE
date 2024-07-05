@@ -50,7 +50,7 @@ Grading Exercise 1
 		Types: 13 of 13
 ```
 
-# PROJECT OVERVIEW
+# Project Overview
 
 ## Analyzing the Impact of Climate Change on Crop Production and CO2 Emissions in the USA (1990-2015)
 
