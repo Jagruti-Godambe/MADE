@@ -20,6 +20,10 @@ This dataset provides data on crop yields, harvested areas, and production quant
 
 The CO2 emissions dataset provides a comprehensive overview of the amount of CO2 emitted by each country. The dataset includes information on CO2 emissions by country from 1960 to the present day. It covers all countries in the world and is compiled from various sources, including the United Nations Framework Convention on Climate Change (UNFCCC) and the International Energy Agency (IEA).
 
+[**Project Data Report**](project/data-report.pdf): Document detailing data cleaning and pipeline procedures.
+
+[**Project Analysis Report**](project/Analysis-report.pdf): Final report containing data analysis and visualizations.
+
 
 
 ## Analysis
