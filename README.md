@@ -31,7 +31,52 @@ The analysis focused on examining the trends in crop production and CO2 emission
 
 <img src="data/Screenshot 2024-07-03 at 20.48.09.png" width="700" height="466">
 
+## Installation and Usage
 
+### Setting Up the Environment
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/puni-ram48/MADE-SS2024.git
+    ```
+
+2. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Data Pipeline and Testing
+
+### Data Pipeline [View Here](project/pipeline.py)
+The project includes an automated data pipeline with the following stages:
+
+- **Data Fetching**: Automatically retrieves datasets from specified sources.
+- **Data Transformation & Cleaning**: Applies necessary transformations and cleaning to ensure data accuracy.
+- **Data Loading**: Loads transformed data into structured formats ready for analysis.
+
+### Testing the Pipeline [View Test Script](project/test_pipeline.py)
+A comprehensive test script validates the entire data pipeline, ensuring:
+
+- Accuracy in data retrieval.
+- Proper application of data cleaning and transformation processes.
+- Integrity and consistency of the transformed data.
+
+### Continuous Integration (CI) Workflow [View CI Script](.github/workflows/CI_Execute_Test.yml)
+An automated CI workflow is set up using GitHub Actions:
+
+- **Continuous Integration (CI)**: Runs the test script on each push to the main branch to ensure pipeline reliability and functionality.
+
+## Running the Data Pipeline and Tests
+
+1. Run the data pipeline:
+    ```bash
+    python3 automated_datapipeline.py
+    ```
+
+2. Execute the test script:
+    ```bash
+    python3 automated_testing.py
+    ```
 ## Results:
 Showed variability over the period, influenced by factors such as industrial activities and changes in energy consumption.CO2 emissions showed a VARIABILITY.
 Demonstrated a consistent increase despite variability, driven by advancements in agricultural technology and practices, as well as natural climate variability.
