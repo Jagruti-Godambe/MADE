@@ -73,15 +73,6 @@ python3 automated_datapipeline.py
 python3 automated_testing.py
 ```
 
-## Contributing
-We welcome contributions to this project! If you would like to contribute, please follow these steps:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Make your changes and commit them (`git commit -am 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Create a new Pull Request.
-
-Please ensure your code is well-documented.
 
 ## Authors and Acknowledgment
 This project was initiated and completed by Puneetha Dharmapura Shrirama. 
